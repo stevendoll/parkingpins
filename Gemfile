@@ -12,6 +12,13 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise_invitable'
+
+# http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+
 gem 'high_voltage'
 gem 'pg'
 gem 'pundit'
