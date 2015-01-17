@@ -19,6 +19,25 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 
+# added gems
+gem 'font-awesome-rails'
+gem 'simple_token_authentication'
+gem 'attribute_normalizer'
+
+gem 'gibbon' #mailchimp list
+
+gem "paperclip"
+gem 'aws-sdk'
+
+gem 'acts-as-taggable-on'
+gem 'will_paginate'
+
+gem 'pushmeup' #push notifications
+gem 'twilio-ruby' #sms
+
+# memory logging
+gem 'oink'
+
 gem 'high_voltage'
 gem 'pg'
 gem 'pundit'
