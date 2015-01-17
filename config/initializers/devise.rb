@@ -275,6 +275,7 @@ Devise.setup do |config|
   # config.omniauth :facebook, "KEY", "SECRET"
   # config.omniauth :linked_in, "KEY", "SECRET"
   # config.omniauth :twitter, "KEY", "SECRET"
+  config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
 
 
   # ==> Warden configuration

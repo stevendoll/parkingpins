@@ -37,10 +37,6 @@ Rails.application.configure do
     password: Rails.application.secrets.email_provider_apikey
   }
 
-  # omniauth with devise
-  config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
-
-
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
