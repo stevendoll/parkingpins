@@ -35,7 +35,13 @@
   <% end %>
 </div>
 <div class="authform">
-<h3>Cancel Account</h3>
-<p>Unhappy? We'll be sad to see you go.</p>
-<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
+  <h3>Cancel Account</h3>
+  <p>Unhappy? We'll be sad to see you go.</p>
+  <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
 </div>
+<div class="authform">
+  <h3>Twitter</h3>
+  <p>Connect your twitter account.</p>
+  <%= link_to "Sign up with Twitter", user_omniauth_authorize_path(:twitter), :class => 'button right' %>
+</div>
+

@@ -21,3 +21,9 @@
      <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
 </div>
+<div class="authform">
+<h3>Twitter</h3>
+<p>Connect your twitter account.</p>
+<%= link_to "Sign up with Twitter", user_omniauth_authorize_path(:twitter), :class => 'button right' %>
+</div>
+
