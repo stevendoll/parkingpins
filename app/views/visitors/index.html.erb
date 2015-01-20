@@ -1,2 +1,365 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<!-- Top content -->
+<div class="top-content">
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 phone">
+          
+          <%= image_tag("iphone-1.png") %>
+
+        </div>
+        <div class="col-sm-7 text">
+          <div class="logo">
+            <h1><a href="">ParkingPins Landing Page</a></h1>
+          </div>
+          <h2>ParkingPins is ready</h2>
+          <%= link_to 'About', page_path('about') %>
+          <% if user_signed_in? %>
+          <%= link_to 'Edit account', edit_user_registration_path %>
+          <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+          <% else %>
+          <%= link_to 'Sign in', new_user_session_path %>
+          <%= link_to 'Sign up', new_user_registration_path %>
+          <% end %>
+          <% if user_signed_in? %>
+          <% if current_user.admin? %>
+          <%= link_to 'Users', users_path %>
+          <% end %>
+          <% end %>
+          <div class="description">
+            We have been working very hard to design the new version of our app. 
+            Finally it's ready. It comes with a lot of new features. Check it out!
+          </div>
+          <div class="top-button">
+            <a class="button-1" href="#"><i class="fa fa-apple"></i> Get it now</a>
+          </div>
+          <div class="top-arrow">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features -->
+<div class="features-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 features">
+        <h3>Main features</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 features-box-1">
+        <div class="features-box-1-icon">
+          <i class="fa fa-eye"></i>
+        </div>
+        <h4>Easy To Use</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et.
+        </p>
+      </div>
+      <div class="col-sm-4 features-box-1">
+        <div class="features-box-1-icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <h4>Responsive Layout</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et.
+        </p>
+      </div>
+      <div class="col-sm-4 features-box-1">
+        <div class="features-box-1-icon">
+          <i class="fa fa-pencil"></i>
+        </div>
+        <h4>Flat Design</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Single feature -->
+<div class="single-feature-container single-feature-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 single-feature-text">
+        <h3>Easy to use</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 single-feature-img">
+        <%= image_tag("iphone-2.png") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Single feature -->
+<div class="single-feature-container single-feature-no-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 single-feature-text">
+        <h3>Responsive layout</h3>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+          aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 single-feature-img">
+        <%= image_tag("iphone-3.png") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Single feature -->
+<div class="single-feature-container single-feature-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 single-feature-text">
+        <h3>Flat design</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 single-feature-img">
+        <%= image_tag("iphone-2.png") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to action -->
+<div class="call-to-action-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 call-to-action-text">
+        <h3>Download it now</h3>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+          aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exercitation.
+        </p>
+        <div class="call-to-action-button">
+          <a class="button-2" href="#"><i class="fa fa-mobile"></i> Get it on the App Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Subscription form -->
+<div class="subscribe-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 subscribe">
+        <h3>Subscribe to our newsletter</h3>
+        <p>Sign up now to our newsletter and you'll be one of the first to know about new updates:</p>
+        <form class="form-inline" role="form" action="assets/subscribe.php" method="post">
+          <div class="form-group">
+            <label class="sr-only" for="subscribe-email">Email address</label>
+            <input type="text" name="email" placeholder="Enter your email..." class="subscribe-email" id="subscribe-email">
+          </div>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <div class="success-message"></div>
+        <div class="error-message"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 testimonials">
+      <h3>What our users say</h3>
+      <div class="testimonial-active"></div>
+      <div class="testimonial-quote">&ldquo; &rdquo;</div>
+      <div class="testimonial-single">
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+          lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, 
+          quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
+          <br>
+          <a href="">John Doe, johndoe.com</a>
+        </p>
+        <div class="testimonial-single-image">
+          <%= image_tag("testimonials/1.jpg") %>
+        </div>
+      </div>
+      <div class="testimonial-single">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+          ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          incididunt ut labore et.
+          <br>
+          <a href="">Jane Jonsson, blog.jane.com</a>
+        </p>
+        <div class="testimonial-single-image">
+          <%= image_tag("testimonials/2.jpg") %>
+        </div>
+      </div>
+      <div class="testimonial-single">
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+          lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, 
+          quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
+          <br>
+          <a href="">John Doe, johndoe.com</a>
+        </p>
+        <div class="testimonial-single-image">
+          <%= image_tag("testimonials/3.jpg") %>
+        </div>
+      </div>
+      <div class="testimonial-single">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+          ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          incididunt ut labore et.
+          <br>
+          <a href="">Jane Jonsson, blog.jane.com</a>
+        </p>
+        <div class="testimonial-single-image">
+          <%= image_tag("testimonials/2.jpg") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Who's behind this -->
+<div class="whos-behind-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 whos-behind">
+        <h3>Who's behind this</h3>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+          lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 whos-behind-box-1">
+        <div class="whos-behind-photo">
+          <%= image_tag("team/1.jpg") %>
+          <div class="whos-behind-social">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-linkedin"></i></a>
+            <a href=""><i class="fa fa-envelope"></i></a>
+          </div>
+        </div>
+        <h4>John Doe</h4>
+        <h5>Developer</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et.
+        </p>
+      </div>
+      <div class="col-sm-4 whos-behind-box-1">
+        <div class="whos-behind-photo">
+          <%= image_tag("team/2.jpg") %>
+          <div class="whos-behind-social">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-linkedin"></i></a>
+            <a href=""><i class="fa fa-envelope"></i></a>
+          </div>
+        </div>
+        <h4>Tim Brown</h4>
+        <h5>Founder</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et.
+        </p>
+      </div>
+      <div class="col-sm-4 whos-behind-box-1">
+        <div class="whos-behind-photo">
+          <%= image_tag("team/1.jpg") %>
+          <div class="whos-behind-social">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-linkedin"></i></a>
+            <a href=""><i class="fa fa-envelope"></i></a>
+          </div>
+        </div>
+        <h4>Sarah Red</h4>
+        <h5>Designer</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+          labore et.
+        </p>
+      </div>
+    </div>
+    <!-- Latest tweets -->
+    <div class="row">
+      <div class="col-sm-12 latest-tweets">
+        <h4>Our Latest Tweets</h4>
+        <p class="tweet-active"></p>
+        <div class="tweets"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How to contact us -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 contact">
+      <h3>How to contact us</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-7 contact-form">
+      <h4>Send us a message</h4>
+      <form role="form" action="assets/contact.php" method="post">
+        <div class="form-group">
+          <label class="sr-only" for="contact-email">Email</label>
+          <input type="text" name="email" placeholder="Email..." class="contact-email" id="contact-email">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="contact-subject">Subject</label>
+          <input type="text" name="subject" placeholder="Subject..." class="contact-subject" id="contact-subject">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="contact-message">Message</label>
+          <textarea name="message" placeholder="Message..." class="contact-message" id="contact-message"></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+    <div class="col-sm-5 contact-address">
+      <h4>Come visit us</h4>
+      <div class="map"></div>
+      <h4>Address</h4>
+      <p><i class="fa fa-map-marker"></i>Via Principe Amedeo 9, 10100, Torino, TO, Italy</p>
+      <p><i class="fa fa-phone"></i>Phone: 0039 333 12 68 347</p>
+    </div>
+  </div>
+</div>
+

@@ -1,3 +1,15 @@
+<!-- Top content -->
+<div class="top-content">
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 phone">
+          
+          <%= image_tag("iphone-1.png") %>
+
+        </div>
+        <div class="col-sm-7 text">
+
 <div class="authform">
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
     <h3>Sign in</h3>
@@ -30,4 +42,10 @@
   <h3>Twitter</h3>
   <p>Connect your twitter account.</p>
   <%= link_to "Sign up with Twitter", user_omniauth_authorize_path(:twitter), :class => 'button right' %>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

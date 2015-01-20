@@ -10,11 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
-//= require quadris_theme
-//= require_tree .
-
-
+//= require quadris.js
+//= require jquery.backstretch.min.js
+//= require jquery.ui.map.js
+//= require retina-1.1.0.min.js
+//= require placeholder.js
