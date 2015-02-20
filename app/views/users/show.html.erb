@@ -1,3 +1,23 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
+<% content_for(:title) { "User Profile" } %>
+
+<p>
+  <%= image_tag @user.avatar.url(:web) %>
+</p>
+
+<h1><%= @user.name %></h1>
+
+
+<h2>Contact information</h2>
+<p><%= @user.first_name if @user.first_name %> <%= @user.last_name if @user.last_name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>Phone: <%= @user.phone if @user.phone %></p>
+
+<h2>Twitter</h2>
+<p>Name: <%= @user.twitter_name if @user.twitter_name %></p>
+<p>Avatar: <%= @user.twitter_avatar if @user.twitter_avatar %></p>
+<p>Address: <%= @user.twitter_address if @user.twitter_address %></p>
+<p>oauth_token: <%= @user.twitter_oauth_token if @user.twitter_oauth_token %></p>
+<p>oauth_secret: <%= @user.twitter_oauth_secret if @user.twitter_oauth_secret %></p>
+
+
+<%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-mini' %>

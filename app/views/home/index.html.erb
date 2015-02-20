@@ -1,0 +1,15 @@
+<h1>My twitter friends</h1>
+
+<table class="table">
+  <tbody>
+    <% Friend.all.each do |friend| %>
+    <tr>
+      <td><%= friend.name %></td>
+      <td><%= friend.location %></td>
+      <td><%= friend.screen_name %></td>
+      <td><%= friend.latitude if friend.latitude %></td>
+      <td><%= friend.longitude if friend.longitude %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

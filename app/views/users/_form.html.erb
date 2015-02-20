@@ -1,0 +1,24 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :name %>
+      <%= f.input :phone %>
+      <%= f.input :authentication_token %>
+      <%= f.input :description %>
+      
+
+      <h2>Avatar</h2>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+          
+      
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

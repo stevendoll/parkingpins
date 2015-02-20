@@ -13,10 +13,11 @@ class UsersController < ApplicationController
     #authorize @user
   end
 
-  # GET /users/:id/edit
+  # GET /users/1/edit
   def edit
-    # authorize! :update, @user
+    authorize @user
   end
+
 
   # def update
   #   # authorize @user
@@ -78,7 +79,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    accessible = [ :name, :email ] # extend with your own params
+    accessible = [ :role, :name, :email, :authentication_token, :current_password, :first_name, :last_name, :phone, :description, :avatar, :invitation_code, :tag_list ] # extend with your own params
     accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
     params.require(:user).permit(accessible)
   end

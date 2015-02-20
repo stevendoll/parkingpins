@@ -21,6 +21,15 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.integer :role
 
+      t.string :twitter_name
+      t.string :twitter_avatar
+      t.string :twitter_address
+      t.string :twitter_oauth_token
+      t.string :twitter_oauth_secret
+      t.float :twitter_latitude, {:precision=>10, :scale=>6}
+      t.float :twitter_longitude, {:precision=>10, :scale=>6}
+
+
       ## avatar attachment with paperclip and aws
       t.attachment :avatar
 

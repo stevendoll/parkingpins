@@ -37,6 +37,16 @@ Rails.application.configure do
     password: Rails.application.secrets.email_provider_apikey
   }
 
+  # Paperclip
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => Rails.application.secrets.aws_s3_bucket,
+      :access_key_id => Rails.application.secrets.aws_s3_key,
+      :secret_access_key => Rails.application.secrets.aws_s3_secret,
+    }
+  }
+
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:5000' }
   config.action_mailer.delivery_method = :smtp

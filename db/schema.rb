@@ -11,11 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117175729) do
+ActiveRecord::Schema.define(version: 20150130044416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "friends", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string   "name"
+    t.string   "screen_name"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "twitter_user_id"
+    t.uuid     "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "identities", force: true do |t|
     t.uuid     "user_id"
@@ -35,6 +47,13 @@ ActiveRecord::Schema.define(version: 20150117175729) do
     t.string   "phone"
     t.string   "description"
     t.integer  "role"
+    t.string   "twitter_name"
+    t.string   "twitter_avatar"
+    t.string   "twitter_address"
+    t.string   "twitter_oauth_token"
+    t.string   "twitter_oauth_secret"
+    t.float    "twitter_latitude"
+    t.float    "twitter_longitude"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

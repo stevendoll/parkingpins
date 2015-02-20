@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Parkingpins
+module Tweetby
   class Application < Rails::Application
 
     config.generators do |g|
@@ -18,6 +18,11 @@ module Parkingpins
         controller_specs: false,
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
+
+    # http://stackoverflow.com/questions/4982073/different-layout-for-sign-in-action-in-devise
+    config.to_prepare do
+        MapDisplayController.layout "map"
     end
 
     # Settings in config/environments/* take precedence over those specified here.

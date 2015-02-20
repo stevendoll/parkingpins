@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:twitter]
 
 
+  has_many :friends
+
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
@@ -34,11 +36,25 @@ class User < ActiveRecord::Base
 
       # Create the user if it's a new registration
       if user.nil?
+        location = auth.info.location
+        user_location = Geocoder.coordinates("#{location}")
         user = User.new(
           name: auth.extra.raw_info.name,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-          password: Devise.friendly_token[0,20]
+          password: Devise.friendly_token[0,20],
+
+          # user.provider = auth["provider"]
+          # user.uid = auth["uid"]
+          twitter_name: auth.info.name,
+          twitter_address: auth.info.location,
+          twitter_avatar: auth.info.image,
+          twitter_oauth_token: auth.credentials.token,
+          twitter_oauth_secret: auth.credentials.secret,
+
+          twitter_latitude: user_location.first,
+          twitter_latitude: user_location.second
+
         )
         user.skip_confirmation!
         user.save!
